@@ -35,12 +35,14 @@ export class TelegramService {
         (async () => {
             await this.manager.train();
             this.manager.save();
-            const response = await this.manager.process('en', 'I should go now');
         })();
     }
 
     private async findAnAppropriateAnswer(input: string) {
         const nlpResultFromExternalLibrary = await this.manager.process('en', input);
+        if (nlpResultFromExternalLibrary.answers[0] === undefined) {
+            return 'I do not know what to say.';
+        }
         return nlpResultFromExternalLibrary.answers[0].answer;
     }
 
