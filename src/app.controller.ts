@@ -7,7 +7,8 @@ export class AppController {
 
   @Get()
   getHello(@Res() response): string {
-    return response.sendfile('assets/hello-world.html');
+    // return response.sendfile('assets/hello-world.html');
+    return response.redirect('https://dance-planner.de');
   }
 
   @Get('/sagHallo')
