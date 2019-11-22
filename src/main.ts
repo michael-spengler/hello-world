@@ -7,7 +7,7 @@ import { AppService } from './app.service';
 import { TelegramService } from './telegram/telegram.service';
 
 async function bootstrap() {
-  const filePath = `${__dirname}/../.env.json`;
+  const filePath = `${__dirname}/../topsecret/.env.json`;
   AppService.configurationFile = fs.readJSON(filePath);
 
   const app = await NestFactory.create(AppModule);
