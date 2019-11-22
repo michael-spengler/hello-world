@@ -15,5 +15,6 @@ async function bootstrap() {
 
   await TelegramService.startTheTelegramBot();
   await app.listen(AppService.configurationFile.port);
+  await console.log(`The App is listening on port: ${AppService.configurationFile.port}`);
 }
 bootstrap();
